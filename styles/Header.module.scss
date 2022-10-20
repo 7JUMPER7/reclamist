@@ -1,0 +1,40 @@
+.headerContainer {
+    background-color: rgba(var(--primaryRGB), 0.9);
+    backdrop-filter: blur(10px);
+    height: 60px;
+    padding: 0 60px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+
+    a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        font-family: 'Arial Black', sans-serif;
+        font-size: 24px;
+    }
+
+    .infoWrap {
+        display: flex;
+        align-items: center;
+
+        .phone {
+            font-family: 'Jost', sans-serif;
+            font-weight: normal;
+            font-size: 16px;
+            margin-right: 20px;
+        }
+
+        .instagramLink {
+            display: flex;
+            align-items: center;
+            height: 24px;
+        }
+    }
+}

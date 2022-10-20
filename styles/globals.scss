@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;800&display=swap');
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --black: black;
+    --BG: #1B1B1B;
+    --primary: #006CD0;
+    --primaryRGB: 0, 108, 208;
+    --white: white;
+}
+
+body {
+    font-family: 'Jost', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--BG);
+    color: var(--white);
+    font-weight: 400;
+    width: 100vw;
+    max-width: 100%;
+}
