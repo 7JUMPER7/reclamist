@@ -1,4 +1,123 @@
 .container {
-  width: 100%;
-  min-height: 100vh;
+    width: 100%;
+
+    .bannerContainer {
+        width: 100%;
+        height: calc(100vh - 60px);
+        position: relative;
+        border-radius: 0 0 30px 30px;
+        overflow: hidden;
+        box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.3);
+
+        .grain {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            filter: invert(1) contrast(5) brightness(0);
+            z-index: 1;
+            opacity: 0.5;
+        }
+
+        .tint {
+            background-color: rgba(var(--primaryRGB), 0.15);
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+        }
+
+        .gradient {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 50%;
+            background: linear-gradient(90deg, transparent, rgba(var(--primaryRGB), 0.4), rgba(var(--primaryRGB), 0.5));
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: saturate(0.7);
+        }
+
+        .text {
+            position: absolute;
+            top: -70px;
+            right: 200px;
+            bottom: 0;
+            max-width: 600px;
+            z-index: 2;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+
+            h1 {
+                font-size: 64px;
+                text-align: right;
+                line-height: 70px;
+            }
+
+            p {
+                font-size: 20px;
+            }
+        }
+
+        .arrow {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 30px;
+            z-index: 3;
+            text-align: center;
+            animation: 2s cubic-bezier(.3,0,.7,1) infinite alternate arrowAnim;
+        }
+
+        @keyframes arrowAnim {
+            from {
+                bottom: 30px;
+            }
+            to {
+                bottom: 20px;
+            }
+        }
+    }
+
+    .part {
+        text-align: center;
+        margin: 70px auto;
+        width: 90%;
+        max-width: 1300px;
+
+        h2 {
+            font-size: 40px;
+        }
+
+        .wrap {
+            margin-top: 24px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+
+            .infoBox {
+                text-align: left;
+                width: 35%;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1000px) {
+        .part {
+            .wrap {
+                flex-direction: column;
+
+                .infoBox {
+                    width: 90%;
+                }
+            }
+        }
+    }
 }

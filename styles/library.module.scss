@@ -1,0 +1,19 @@
+.btn {
+    padding: 10px 40px;
+    margin-top: 20px;
+    background-color: var(--primary);
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    color: white;
+    font-family: 'Jost', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    transition: .3s all;
+
+    &:hover {
+        background-color: white;
+        color: var(--primary);
+        cursor: pointer;
+    }
+}

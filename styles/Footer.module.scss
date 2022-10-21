@@ -1,0 +1,35 @@
+.footerContainer {
+    background-color: var(--primary);
+    height: 200px;
+    padding: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        font-family: 'Arial Black', sans-serif;
+        font-size: 36px;
+    }
+
+    .infoWrap {
+        display: flex;
+        align-items: center;
+
+        .phone {
+            font-family: 'Jost', sans-serif;
+            font-weight: normal;
+            font-size: 20px;
+            margin-left: 20px;
+        }
+
+        .instagramLink {
+            display: flex;
+            align-items: center;
+            height: 24px;
+        }
+    }
+}

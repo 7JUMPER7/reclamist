@@ -1,8 +1,10 @@
 .headerContainer {
-    background-color: rgba(var(--primaryRGB), 0.9);
+    background-color: rgba(var(--primaryRGB), 0.8);
     backdrop-filter: blur(10px);
     height: 60px;
     padding: 0 60px;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s all;
 
     display: flex;
     flex-direction: row;
@@ -11,12 +13,13 @@
 
     position: sticky;
     top: 0;
+    z-index: 10;
 
     a {
         color: white;
         text-decoration: none;
         font-weight: bold;
-        font-family: 'Arial Black', sans-serif;
+        font-family: "Arial Black", sans-serif;
         font-size: 24px;
     }
 
@@ -25,7 +28,7 @@
         align-items: center;
 
         .phone {
-            font-family: 'Jost', sans-serif;
+            font-family: "Jost", sans-serif;
             font-weight: normal;
             font-size: 16px;
             margin-right: 20px;
@@ -36,5 +39,9 @@
             align-items: center;
             height: 24px;
         }
+    }
+
+    @media screen and (max-width: 750px) {
+        padding: 0 32px;
     }
 }
