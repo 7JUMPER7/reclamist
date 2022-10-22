@@ -19,7 +19,7 @@
         color: white;
         text-decoration: none;
         font-weight: bold;
-        font-family: "Arial Black", sans-serif;
+        font-family: "Arial Black", "Jost", sans-serif;
         font-size: 24px;
     }
 
@@ -43,5 +43,16 @@
 
     @media screen and (max-width: 750px) {
         padding: 0 32px;
+    }
+
+    @media screen and (max-width: 550px) {
+        padding: 0 16px;
+
+        .infoWrap {
+            .phone {
+                font-size: 14px;
+                margin-right: 10px;
+            }
+        }
     }
 }

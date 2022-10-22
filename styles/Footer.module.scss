@@ -11,7 +11,7 @@
         color: white;
         text-decoration: none;
         font-weight: bold;
-        font-family: 'Arial Black', sans-serif;
+        font-family: "Arial Black", "Jost", sans-serif;
         font-size: 36px;
     }
 
@@ -20,7 +20,7 @@
         align-items: center;
 
         .phone {
-            font-family: 'Jost', sans-serif;
+            font-family: "Jost", sans-serif;
             font-weight: normal;
             font-size: 20px;
             margin-left: 20px;
@@ -30,6 +30,26 @@
             display: flex;
             align-items: center;
             height: 24px;
+        }
+    }
+
+    @media screen and (max-width: 750px) {
+        padding: 32px;
+        height: 150px;
+    }
+
+    @media screen and (max-width: 550px) {
+        padding: 16px;
+
+        a {
+            font-size: 24px;
+        }
+
+        .infoWrap {
+            .phone {
+                font-size: 14px;
+                margin-left: 10px;
+            }
         }
     }
 }

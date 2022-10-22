@@ -25,17 +25,25 @@ const Slider = ({ images }: Props) => {
     };
 
     const handleResize = () => {
+        let halfSelectedImageSize = 200 - 30;
+        let defaultImageSize = 300;
+
+        if (window.innerWidth <= 550) {
+            halfSelectedImageSize = 125 - 30;
+            defaultImageSize = 200;
+        }
+
         const containerRef = container.current;
         if (containerRef) {
             setLeftValue(
                 containerRef.offsetWidth / 2 -
-                    (170 + (300 - 60) * selectedImage)
+                    (halfSelectedImageSize +
+                        (defaultImageSize - 60) * selectedImage)
             );
         }
     };
 
     const handleTouchStart = (e: any) => {
-        console.dir(e);
         let touchDown = null;
         if (e.touches) {
             touchDown = e.touches[0].clientX;
@@ -123,6 +131,10 @@ const Slider = ({ images }: Props) => {
                                     styles.image +
                                     (selectedImage === index
                                         ? " " + styles.selected
+                                        : "") +
+                                    ((selectedImage === index - 1 ||
+                                        selectedImage === index + 1)
+                                        ? " " + styles.preselected
                                         : "")
                                 }
                             ></Image>

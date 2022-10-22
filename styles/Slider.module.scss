@@ -1,8 +1,10 @@
 .sliderWrap {
     width: 100%;
+    max-width: 800px;
     flex: 1 1 auto;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 16px;
 
     .sliderButton {
@@ -28,11 +30,15 @@
     .sliderContainer {
         height: 450px;
         width: 100%;
-        max-width: 700px;
         overflow: hidden;
         position: relative;
         display: flex;
-        mask-image: linear-gradient(to left, rgba(0, 0, 0, 0), black 15% 75%, rgba(0, 0, 0, 0));
+        mask-image: linear-gradient(
+            to left,
+            rgba(0, 0, 0, 0),
+            black 15% 75%,
+            rgba(0, 0, 0, 0)
+        );
 
         .imagesHandler {
             position: absolute;
@@ -56,16 +62,21 @@
                 transition: 0.3s all;
                 z-index: 1;
                 filter: saturate(0.5);
-                opacity: 0.7;
-                
+                opacity: 0.1;
+
                 touch-action: none;
                 pointer-events: none;
                 user-select: none;
 
+                &.preselected {
+                    z-index: 2;
+                    opacity: 0.7;
+                }
+
                 &.selected {
                     width: 400px;
                     height: 400px;
-                    z-index: 2;
+                    z-index: 3;
                     filter: none;
                     opacity: 1;
                     box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.5);
@@ -77,6 +88,23 @@
     @media screen and (max-width: 550px) {
         .sliderButton {
             display: none;
+        }
+
+        .sliderContainer {
+            height: 300px;
+            mask-image: none;
+
+            .imagesHandler {
+                .image {
+                    width: 200px;
+                    height: 200px;
+
+                    &.selected {
+                        width: 250px;
+                        height: 250px;
+                    }
+                }
+            }
         }
     }
 }

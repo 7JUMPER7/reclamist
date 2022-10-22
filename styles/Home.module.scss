@@ -8,6 +8,7 @@
         border-radius: 0 0 30px 30px;
         overflow: hidden;
         box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.3);
+        z-index: 3;
 
         .grain {
             position: absolute;
@@ -16,12 +17,19 @@
             filter: invert(1) contrast(5) brightness(0);
             z-index: 1;
             opacity: 0.5;
+
+            touch-action: none;
+            pointer-events: none;
+            user-select: none;
         }
 
         .tint {
             background-color: rgba(var(--primaryRGB), 0.15);
             position: absolute;
-            top: 0; right: 0; bottom: 0; left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
         }
 
         .gradient {
@@ -30,7 +38,16 @@
             right: 0;
             bottom: 0;
             width: 50%;
-            background: linear-gradient(90deg, transparent, rgba(var(--primaryRGB), 0.4), rgba(var(--primaryRGB), 0.5));
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(var(--primaryRGB), 0.4),
+                rgba(var(--primaryRGB), 0.5)
+            );
+
+            touch-action: none;
+            pointer-events: none;
+            user-select: none;
         }
 
         video {
@@ -38,6 +55,10 @@
             height: 100%;
             object-fit: cover;
             filter: saturate(0.7);
+
+            &::-webkit-media-controls {
+                opacity: 0;
+            }
         }
 
         .text {
@@ -71,22 +92,23 @@
             bottom: 30px;
             z-index: 3;
             text-align: center;
-            animation: 2s cubic-bezier(.3,0,.7,1) infinite alternate arrowAnim;
+            animation: 2s cubic-bezier(0.3, 0, 0.7, 1) infinite alternate
+                arrowAnim;
         }
 
         @keyframes arrowAnim {
             from {
-                bottom: 30px;
+                transform: translateY(0);
             }
             to {
-                bottom: 20px;
+                transform: translateY(10px);
             }
         }
     }
 
     .part {
         text-align: center;
-        margin: 70px auto;
+        margin: 100px auto;
         width: 90%;
         max-width: 1300px;
 
@@ -106,16 +128,90 @@
                 text-align: left;
                 width: 35%;
             }
+
+            &.reversed {
+                flex-direction: row-reverse;
+            }
         }
     }
 
     @media screen and (max-width: 1000px) {
+        .bannerContainer {
+            .text {
+                right: 100px;
+            }
+        }
+
         .part {
             .wrap {
-                flex-direction: column;
+                flex-direction: column !important;
 
                 .infoBox {
                     width: 90%;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 750px) {
+        .bannerContainer {
+            .gradient {
+                top: 0;
+                right: 0;
+                left: 0;
+                width: 100%;
+                height: 70%;
+                background: linear-gradient(
+                    0,
+                    transparent,
+                    rgba(var(--primaryRGB), 0.4),
+                    rgba(var(--primaryRGB), 0.5)
+                );
+            }
+
+            .text {
+                display: flex;
+                flex-direction: column;
+                left: 0;
+                margin-top: -90px;
+                padding: 30px;
+                width: 100%;
+                height: auto;
+                align-items: flex-start;
+
+                h1 {
+                    text-align: left;
+                    font-size: 36px;
+                    line-height: 45px;
+                }
+
+                p {
+                    font-size: 16px;
+                }
+            }
+
+            .arrow {
+                bottom: 100px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 550px) {
+        .part {
+            margin: 70px auto;
+            width: 100%;
+
+            h2 {
+                font-size: 24px;
+            }
+
+            .wrap {
+                margin-top: 0;
+
+                .infoBox {
+                    p {
+                        font-size: 14px;
+                    }
                 }
             }
         }

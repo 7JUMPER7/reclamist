@@ -34,13 +34,15 @@ const Home: NextPage = () => {
                 </svg>
 
                 <video
-                    loop={true}
-                    autoPlay={true}
-                    muted={true}
+                    loop
+                    muted
                     poster={"/BG/BG_Video_Thumb.webp"}
+                    playsInline
+                    autoPlay
+                    controls={false}
                 >
                     <source
-                        src={"/BG/BG_Video.webm"}
+                        src={"/BG/BG_Video.mp4"}
                         type={"video/mp4"}
                     ></source>
                 </video>
@@ -83,6 +85,66 @@ const Home: NextPage = () => {
                     <div className={styles.infoBox}>
                         <p>
                             Банери бувають різними фівфівіфв фівфів ф вф івфів
+                            фвіфів фівф фоівро флірвлофір влофрвлофір Вф ор
+                            волфр влофір влофір ловфрловрфілорв олфірв лфоі
+                            волфіірв фолв офлво Наружка реклаама буває різною
+                            фівфівіфв фівфів ф вф івфів фвіфів фівф фоівро
+                            флірвлофір влофрвлофір вф ор волфр влофір влофір
+                            ловфрловрфілорв
+                        </p>
+                        <button className={libraryStyles.btn}>
+                            Переглянути більше
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section className={styles.part}>
+                <h2>ВИВІСКИ</h2>
+                <div className={`${styles.wrap} ${styles.reversed}`}>
+                    <Slider
+                        images={[
+                            "/Images/signboards/nova_pashta.jpeg",
+                            "/Images/signboards/sushi_ushi.jpeg",
+                            "/Images/signboards/kviti.jpeg",
+                            "/Images/signboards/td_red.jpeg",
+                        ]}
+                    />
+                    <div className={styles.infoBox}>
+                        <p>
+                            Вивіски бувають різними різною фівфівіфв фівфів ф вф
+                            івфів фвіфів фівф фоівро флірвлофір влофрвлофір Вф
+                            ор волфр влофір влофір ловфрловрфілорв олфірв лфоі
+                            волфіірв фолв офлво Наружка реклаама буває різною
+                            фівфівіфв фівфів ф вф івфів фвіфів фівф фоівро
+                            флірвлофір влофрвлофір вф ор волфр влофір влофір
+                            ловфрловрфілорв олфірв лфоі волфіірв фолв офлво
+                            Наружка реклаама буває різною фівфівіфв фівфів ф вф
+                            івфів фвіфів фівф фоівро флірвлофір влофрвлофір вф
+                            ор волфр влофір влофір Ловфрловрфілорв олфірв лфоі
+                            волфіірв фолв офлво Наружка реклаама буває різною.
+                        </p>
+                        <button className={libraryStyles.btn}>
+                            Переглянути більше
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section className={styles.part}>
+                <h2>ІНШЕ</h2>
+                <div className={styles.wrap}>
+                    <Slider
+                        images={[
+                            "/Images/other/road_signs.jpeg",
+                            "/Images/other/vino_piano.jpeg",
+                            "/Images/other/darkwood.jpeg",
+                            "/Images/other/exchange.jpeg",
+                        ]}
+                    />
+                    <div className={styles.infoBox}>
+                        <p>
+                            Також ми виробляємо фівфівіфв фівфів ф вф івфів
                             фвіфів фівф фоівро флірвлофір влофрвлофір Вф ор
                             волфр влофір влофір ловфрловрфілорв олфірв лфоі
                             волфіірв фолв офлво Наружка реклаама буває різною

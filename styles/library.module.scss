@@ -17,3 +17,10 @@
         cursor: pointer;
     }
 }
+
+@media screen and (max-width: 550px) {
+    .btn {
+        padding: 7px 30px;
+        font-size: 14px;
+    }
+}
