@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "ANALYZE_BUNDLE=true next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource/jost": "^4.5.12",
     "next": "12.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",

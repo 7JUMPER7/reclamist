@@ -3,7 +3,7 @@
 
     .bannerContainer {
         width: 100%;
-        height: calc(100vh - 60px);
+        height: 100vh;
         position: relative;
         border-radius: 0 0 30px 30px;
         overflow: hidden;
@@ -44,6 +44,8 @@
                 rgba(var(--primaryRGB), 0.4),
                 rgba(var(--primaryRGB), 0.5)
             );
+            transform: translateX(130%);
+            animation: 1.3s cubic-bezier(0,.1,.1,1) 1 textAnim both;
 
             touch-action: none;
             pointer-events: none;
@@ -68,6 +70,8 @@
             bottom: 0;
             max-width: 600px;
             z-index: 2;
+            transform: translateX(130%);
+            animation: 1.3s cubic-bezier(0,.1,.1,1) 1 textAnim both;
 
             display: flex;
             flex-direction: column;
@@ -78,10 +82,18 @@
                 font-size: 64px;
                 text-align: right;
                 line-height: 70px;
+                animation: 1.3s cubic-bezier(0,.1,.1,1) 1 textAnim both;
             }
 
             p {
                 font-size: 20px;
+                transform: translateX(130%);
+                animation: 1.6s cubic-bezier(0,.1,.1,1) 1 textAnim both;
+            }
+
+            .btn {
+                transform: translateX(130%);
+                animation: 1.9s cubic-bezier(0,.1,.1,1) 1 textAnim both;
             }
         }
 
@@ -102,6 +114,24 @@
             }
             to {
                 transform: translateY(10px);
+            }
+        }
+
+        @keyframes textAnim {
+            from {
+                transform: translateX(130%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes mobileGradientAnim {
+            from {
+                transform: translateY(-130%);
+            }
+            to {
+                transform: translateY(0);
             }
         }
     }
@@ -167,6 +197,9 @@
                     rgba(var(--primaryRGB), 0.4),
                     rgba(var(--primaryRGB), 0.5)
                 );
+                // transform: translateX(130%);
+                transform: translateY(130%);
+                animation: 1.3s cubic-bezier(0,.1,.1,1) 1 mobileGradientAnim both;
             }
 
             .text {

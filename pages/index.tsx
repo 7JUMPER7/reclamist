@@ -3,12 +3,14 @@ import Head from "next/head";
 import styles from "@/styles/Home.module.scss";
 import libraryStyles from "@/styles/library.module.scss";
 import Slider from "components/Slider";
+import Link from "next/link";
 
 const Home: NextPage = () => {
     return (
         <div className={styles.container}>
             <Head>
                 <title>Reclamist</title>
+                <meta name="description" content="Виготовлення зовнішньої реклами, банерів, наклейок для вашого бізнесу."></meta>
             </Head>
 
             <div className={styles.bannerContainer}>
@@ -52,7 +54,7 @@ const Home: NextPage = () => {
                 <div className={styles.text}>
                     <h1>ВИГОТОВЛЕННЯ РЕКЛАМИ</h1>
                     <p>швидко та якісно</p>
-                    <button className={libraryStyles.btn}>Подробніше</button>
+                    <button className={libraryStyles.btn + ' ' + styles.btn}>Подробніше</button>
                 </div>
 
                 <div className={styles.arrow}>
@@ -92,9 +94,11 @@ const Home: NextPage = () => {
                             флірвлофір влофрвлофір вф ор волфр влофір влофір
                             ловфрловрфілорв
                         </p>
-                        <button className={libraryStyles.btn}>
-                            Переглянути більше
-                        </button>
+                        <Link href={'/banners'}>
+                            <button className={libraryStyles.btn}>
+                                Переглянути більше
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -124,9 +128,11 @@ const Home: NextPage = () => {
                             ор волфр влофір влофір Ловфрловрфілорв олфірв лфоі
                             волфіірв фолв офлво Наружка реклаама буває різною.
                         </p>
+                        <Link href={'/signboards'}>
                         <button className={libraryStyles.btn}>
                             Переглянути більше
                         </button>
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -152,9 +158,11 @@ const Home: NextPage = () => {
                             флірвлофір влофрвлофір вф ор волфр влофір влофір
                             ловфрловрфілорв
                         </p>
+                        <Link href={'/other'}>
                         <button className={libraryStyles.btn}>
                             Переглянути більше
                         </button>
+                        </Link>
                     </div>
                 </div>
             </section>

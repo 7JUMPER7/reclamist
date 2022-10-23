@@ -1,3 +1,5 @@
+import "@fontsource/jost/400.css"
+import "@fontsource/jost/800.css"
 import "@/styles/globals.scss";
 import type { AppProps } from "next/app";
 import Layout from "components/Layout";

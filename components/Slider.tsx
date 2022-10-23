@@ -93,7 +93,7 @@ const Slider = ({ images }: Props) => {
 
     return (
         <div className={styles.sliderWrap}>
-            <button className={styles.sliderButton} onClick={prev}>
+            <button className={styles.sliderButton} onClick={prev} aria-label="Попереднє зображення">
                 <svg
                     width="15"
                     height="29"
@@ -142,7 +142,7 @@ const Slider = ({ images }: Props) => {
                     })}
                 </div>
             </div>
-            <button className={styles.sliderButton} onClick={next}>
+            <button className={styles.sliderButton} onClick={next} aria-label="Наступне зображення">
                 <svg
                     width="16"
                     height="30"

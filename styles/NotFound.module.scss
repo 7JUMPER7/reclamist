@@ -1,0 +1,18 @@
+.notFoundContainer {
+    padding-top: 60px;
+    min-height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        color: var(--primary);
+        font-size: 64px;
+        line-height: 64px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
