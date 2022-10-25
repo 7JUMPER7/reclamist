@@ -24,6 +24,7 @@ body {
     font-weight: 400;
     width: 100vw;
     max-width: 100%;
+    overflow-x: hidden;
 
     main {
         min-height: calc(100vh - 200px);
